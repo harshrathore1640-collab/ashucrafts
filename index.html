@@ -1,0 +1,652 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5efe5">
+<meta name="description" content="Ashu Craft's — Turning Ideas into CNC Art. Premium wooden doors, CNC carved panels, 3D designs and custom woodwork.">
+<title>Ashu Craft's | Turning Ideas into CNC Art</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#f5efe5;
+  --paper:#fffdf8;
+  --beige:#e6d7c2;
+  --wood:#815533;
+  --walnut:#39291f;
+  --gold:#bd965a;
+  --ink:#29251f;
+  --muted:#777064;
+  --line:#e4d8c7;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'DM Sans',Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:82px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.7;overflow-x:hidden}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+.container{width:min(1160px,calc(100% - 44px));margin:auto}
+.section{padding:94px 0}
+.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--wood)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.17}
+h1{font-size:clamp(3rem,7vw,6rem);letter-spacing:-.045em}
+h2{font-size:clamp(2.1rem,4.5vw,3.5rem);margin:15px 0}
+h3{font-size:1.45rem}
+p{color:var(--muted)}
+.section-heading{text-align:center;max-width:700px;margin:0 auto 45px}
+.section-heading p{max-width:570px;margin:0 auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;background:var(--walnut);color:white;border:1px solid var(--walnut);font-size:.85rem;font-weight:600;transition:.25s}
+.btn:hover{background:var(--wood);border-color:var(--wood);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--ink);border-color:#bda88c}
+.btn-outline:hover{color:white}
+.text-link{display:inline-flex;gap:8px;align-items:center;font-size:.84rem;font-weight:700;border-bottom:1px solid var(--gold);padding-bottom:4px}
+
+/* Header */
+.header{position:absolute;top:0;left:0;right:0;z-index:20;color:white;border-bottom:1px solid #ffffff35}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:11px;min-width:0}
+.logo-symbol{width:43px;height:43px;border:1px solid #d9b87e;color:#e3c48c;display:grid;place-items:center;font-family:var(--serif);font-size:1.45rem;flex-shrink:0}
+.logo-text{font-family:var(--serif);font-size:1.15rem;letter-spacing:.05em;line-height:1.1}
+.logo-text small{display:block;font-family:var(--sans);font-size:.53rem;letter-spacing:.22em;margin-top:6px}
+.nav-links{display:flex;align-items:center;gap:22px;font-size:.79rem}
+.nav-links a:hover{color:#e4c58e}
+.nav-cta{border:1px solid #ffffffa3;padding:10px 15px;font-size:.78rem;white-space:nowrap}
+.menu-toggle{display:none;background:transparent;color:white;border:1px solid #ffffff8c;padding:9px 12px}
+
+/* Hero */
+.hero{height:94svh;min-height:700px;max-height:920px;position:relative;display:flex;align-items:center;color:white;background:#33271e;isolation:isolate}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#211810e8 0%,#2118109c 48%,#21181022 100%),linear-gradient(0deg,#21181050,transparent 65%)}
+.hero-slides{position:absolute;inset:0;z-index:-2}
+.hero-slides img{position:absolute;inset:0;opacity:0;animation:heroSlide 18s infinite}
+.hero-slides img:nth-child(1){animation-delay:0s}
+.hero-slides img:nth-child(2){animation-delay:6s}
+.hero-slides img:nth-child(3){animation-delay:12s}
+@keyframes heroSlide{0%,30%{opacity:1}35%,96%{opacity:0}100%{opacity:1}}
+.hero-content{padding-top:65px;max-width:770px}
+.hero .eyebrow{color:#e3c48c}
+.hero h1{margin:20px 0}
+.hero h1 em{font-weight:400;color:#e3c48c}
+.hero-copy{max-width:540px;color:#ffffffd9;font-size:1.02rem;margin-bottom:30px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero .btn{background:#e4cba6;color:#302319;border-color:#e4cba6}
+.hero .btn:hover{background:white;border-color:white}
+.hero .btn-outline{background:#ffffff0c;color:white;border-color:#ffffffa0}
+.hero .btn-outline:hover{background:var(--wood)}
+.hero-bottom{position:absolute;bottom:25px;left:0;right:0;display:flex;justify-content:space-between;gap:15px;color:#ffffffc9;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+
+/* Introduction */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.about-visual{position:relative;padding:0 30px 30px 0}
+.about-main{height:510px}
+.about-inset{position:absolute;right:0;bottom:0;width:44%;height:195px;border:8px solid var(--cream)}
+.about-label{position:absolute;bottom:0;left:0;padding:12px 17px;background:var(--paper);font-family:var(--serif)}
+.about-copy>p{margin:22px 0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px;padding-top:23px;border-top:1px solid var(--line)}
+.stat strong{display:block;font-family:var(--serif);font-size:1.5rem;color:var(--wood);font-weight:500}
+.stat span{font-size:.7rem;color:var(--muted)}
+
+/* Collections */
+.collections{background:#ece1d1}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.product-card{background:var(--paper);min-width:0;transition:transform .3s,box-shadow .3s}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 18px 45px #34291b16}
+.product-image{height:275px;overflow:hidden;background:var(--beige)}
+.product-image img{transition:transform .6s}
+.product-card:hover img{transform:scale(1.045)}
+.product-info{padding:23px}
+.product-number{font-size:.68rem;color:#9b794b;letter-spacing:.15em;font-weight:700}
+.product-info h3{margin:9px 0}
+.product-info p{font-size:.85rem;min-height:75px;margin-bottom:18px}
+
+/* CNC feature */
+.cnc-feature{background:var(--walnut);color:white}
+.cnc-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.cnc-image{height:510px;overflow:hidden}
+.cnc-feature .eyebrow{color:#e3c48c}
+.cnc-feature h2{font-size:clamp(2.3rem,4.5vw,4rem)}
+.cnc-feature p{color:#ffffffbd}
+.cnc-list{padding:0;list-style:none;margin:25px 0}
+.cnc-list li{padding:12px 0;border-bottom:1px solid #ffffff32;color:#fff9ed;font-size:.9rem}
+.cnc-list li:before{content:"✦";color:#e3c48c;margin-right:12px}
+.cnc-feature .btn{background:#e4cba6;color:#302319;border-color:#e4cba6}
+.cnc-feature .btn:hover{background:white}
+
+/* Work gallery */
+.gallery-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}
+.gallery-card{position:relative;min-height:320px;overflow:hidden;background:#d0b99d}
+.gallery-card:first-child{grid-row:span 2;min-height:660px}
+.gallery-card img{position:absolute;inset:0;transition:transform .7s}
+.gallery-card:hover img{transform:scale(1.045)}
+.gallery-card:after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,#20150dbb)}
+.gallery-caption{position:absolute;bottom:22px;left:24px;right:24px;z-index:1;color:white}
+.gallery-caption span{font-size:.69rem;letter-spacing:.14em;text-transform:uppercase;color:#e8c995}
+.gallery-caption h3{margin:6px 0;font-size:1.8rem}
+.gallery-caption p{color:#ffffffd0;font-size:.82rem;margin:0}
+
+/* Advantages */
+.why{background:#ece1d1}
+.why-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:65px;align-items:center}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.feature{padding-top:18px;border-top:1px solid #cdbb9f}
+.feature-num{font-family:var(--serif);font-size:1.9rem;color:#a47c4c}
+.feature h3{font-size:1.25rem;margin:8px 0}
+.feature p{font-size:.83rem;margin:0}
+
+/* Workflow */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.process-card{border-top:1px solid var(--gold);padding-top:20px}
+.process-card .step{font-family:var(--serif);font-size:2.2rem;color:#a47c4c}
+.process-card h3{margin:12px 0 8px;font-size:1.3rem}
+.process-card p{font-size:.84rem;margin:0}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-question{width:100%;display:flex;justify-content:space-between;align-items:center;gap:15px;text-align:left;padding:20px 0;background:none;border:0;color:var(--ink);font-weight:600}
+.faq-question span:last-child{font-size:1.4rem;color:#a58a5e;transition:transform .2s}
+.faq-answer{display:none;padding:0 24px 20px 0}
+.faq-answer p{font-size:.9rem;margin:0}
+.faq-item.active .faq-answer{display:block}
+.faq-item.active .faq-question span:last-child{transform:rotate(45deg)}
+
+/* Contact */
+.contact{background:#ece1d1}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}
+.contact-form{background:var(--paper);padding:30px;box-shadow:0 15px 40px #3527190c}
+.contact-detail{display:flex;align-items:center;gap:14px;margin-top:22px}
+.contact-icon{width:42px;height:42px;display:grid;place-items:center;border:1px solid #cbb99f;color:var(--wood);flex-shrink:0}
+.contact-detail strong{display:block;font-size:.84rem}
+.contact-detail span{font-size:.84rem;color:var(--muted)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:.76rem;font-weight:700;color:var(--wood)}
+.field input,.field select,.field textarea{width:100%;min-width:0;padding:13px;border:1px solid #e0d6c7;background:#fffdf9;outline:none;border-radius:0}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#b89a6d}
+.field textarea{min-height:105px;resize:vertical}
+.contact-form .btn{width:100%;margin-top:19px}
+
+/* Footer */
+footer{background:#29251f;color:#fff8ed;padding:45px 0 22px}
+.footer-top{display:flex;justify-content:space-between;gap:30px;padding-bottom:32px}
+.footer-brand p{max-width:340px;font-size:.84rem;color:#ffffff9c;margin-top:17px}
+.footer-links{display:flex;gap:45px}
+.footer-col strong{font-size:.73rem;letter-spacing:.12em;color:#e3c48c;text-transform:uppercase}
+.footer-col a{display:block;font-size:.82rem;color:#ffffffbd;margin-top:11px}
+.footer-col a:hover{color:white}
+.footer-bottom{border-top:1px solid #ffffff28;padding-top:18px;display:flex;justify-content:space-between;gap:20px;font-size:.72rem;color:#ffffff8a}
+
+/* Floating Call & WhatsApp */
+.floating-actions{position:fixed;right:17px;bottom:19px;z-index:50;display:flex;flex-direction:column;gap:9px}
+.float-btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:white;box-shadow:0 5px 18px #0003;transition:transform .2s}
+.float-btn:hover{transform:translateY(-3px) scale(1.04)}
+.float-btn svg{width:21px;height:21px;display:block}
+.call-btn{background:#1877f2}
+.whatsapp-btn{background:#25d366}
+a:focus-visible,button:focus-visible{outline:3px solid #bd965a;outline-offset:3px}
+
+/* Scroll animations */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+ .reveal{opacity:1;transform:none}
+}
+@media(max-width:950px){
+ .nav-links{gap:13px}
+ .nav-cta{display:none}
+ .about-grid,.cnc-grid,.why-grid{gap:38px}
+ .product-grid{grid-template-columns:repeat(2,1fr)}
+ .product-card:last-child{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}
+ .product-card:last-child .product-image{height:100%;min-height:240px}
+ .faq-grid,.contact-grid{gap:35px}
+ .footer-links{gap:25px}
+}
+@media(max-width:700px){
+ .container{width:calc(100% - 34px)}
+ .section{padding:70px 0}
+ .nav{height:72px}
+ .logo-symbol{width:36px;height:36px;font-size:1.25rem}
+ .logo-text{font-size:.95rem}
+ .logo-text small{font-size:.44rem;letter-spacing:.15em}
+ .menu-toggle{display:block}
+ .nav-links{display:none;position:absolute;top:72px;left:0;right:0;padding:14px 22px 22px;background:#29211a;flex-direction:column;align-items:stretch;gap:0}
+ .nav-links.open{display:flex}
+ .nav-links a{padding:12px 0;border-bottom:1px solid #ffffff20}
+ .hero{height:auto;min-height:710px;max-height:900px}
+ .hero-slides img{object-position:58% center}
+ .hero:before{background:linear-gradient(90deg,#211810d9,#21181065),linear-gradient(0deg,#21181050,transparent 70%)}
+ .hero-content{padding-top:65px;padding-bottom:85px}
+ .hero h1{font-size:clamp(3rem,12vw,4.5rem)}
+ .hero-copy{font-size:.94rem}
+ .hero-bottom{bottom:17px;font-size:.55rem}
+ .hero-bottom span:first-child{max-width:60%}
+ .about-grid,.cnc-grid,.why-grid,.faq-grid,.contact-grid{grid-template-columns:1fr;gap:35px}
+ .about-visual{padding:0 22px 22px 0}
+ .about-main{height:380px}
+ .about-inset{height:150px;border-width:6px}
+ .about-label{font-size:.88rem;padding:9px 12px}
+ .stats{gap:8px}
+ .stat strong{font-size:1.3rem}
+ .stat span{font-size:.63rem}
+ .product-grid{grid-template-columns:1fr}
+ .product-card:last-child{grid-column:auto;display:block}
+ .product-card:last-child .product-image{height:245px;min-height:0}
+ .product-image{height:245px}
+ .product-info{padding:21px}
+ .product-info p{min-height:0}
+ .cnc-image{height:370px}
+ .features{gap:22px 17px}
+ .gallery-grid{grid-template-columns:1fr;gap:15px}
+ .gallery-card,.gallery-card:first-child{grid-row:auto;min-height:360px}
+ .gallery-card:first-child{min-height:430px}
+ .gallery-caption{left:19px;right:19px;bottom:18px}
+ .process-grid{grid-template-columns:1fr 1fr;gap:28px 18px}
+ .contact-form{padding:22px}
+ .form-grid{grid-template-columns:1fr;gap:14px}
+ .field.full{grid-column:auto}
+ .footer-top{flex-direction:column}
+ .footer-links{width:100%;justify-content:space-between;gap:20px}
+ .footer-bottom{flex-direction:column;gap:7px}
+ .floating-actions{right:12px;bottom:13px;gap:8px}
+ .float-btn{width:40px;height:40px}
+ .float-btn svg{width:19px;height:19px}
+}
+@media(max-width:380px){
+ .container{width:calc(100% - 28px)}
+ .hero h1{font-size:2.65rem}
+ .hero-actions .btn{padding:12px 13px;font-size:.75rem}
+ .about-main{height:320px}
+ .cnc-image{height:310px}
+ .gallery-card,.gallery-card:first-child{min-height:315px}
+ .process-grid{grid-template-columns:1fr}
+ .footer-links{flex-wrap:wrap}
+}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="#home" aria-label="Ashu Craft's home">
+      <span class="logo-symbol">AC</span>
+      <span class="logo-text">ASHU CRAFT'S<small>TURNING IDEAS INTO CNC ART</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#collections">Collections</a>
+      <a href="#gallery">Our Work</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Custom Enquiry ↗</a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menu +</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-slides" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=90" alt="">
+    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=90" alt="">
+    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=2000&q=90" alt="">
+  </div>
+  <div class="container hero-content">
+    <span class="eyebrow">Premium wooden doors · CNC craftsmanship</span>
+    <h1>Turning ideas<br>into <em>CNC art.</em></h1>
+    <p class="hero-copy">Discover beautifully carved wooden doors, detailed CNC panels, geometric patterns and custom woodwork that transform ordinary surfaces into distinctive design statements.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#collections">Explore Designs ↗</a>
+      <a class="btn btn-outline" href="#contact">Create Your Design</a>
+    </div>
+  </div>
+  <div class="container hero-bottom">
+    <span>Ashu Craft's · CNC Artistry</span>
+    <span>Precision · Pattern · Craftsmanship</span>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <div class="about-main">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85" alt="Warm modern interior with detailed wood finishes">
+      </div>
+      <div class="about-inset">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=700&q=85" alt="Elegant wood and neutral interior materials">
+      </div>
+      <div class="about-label">Designed with detail. Made to stand out.</div>
+    </div>
+    <div class="about-copy reveal">
+      <span class="eyebrow">The craft behind the design</span>
+      <h2>Where creative ideas become carved detail.</h2>
+      <p>Ashu Craft's focuses on the visual beauty of CNC art and decorative woodwork. From bold geometric patterns to intricate carved panels, each design begins with an idea and a vision for the finished space.</p>
+      <p>Explore inspiration for entrance doors, interior panels, decorative surfaces and bespoke designs tailored to your project requirements.</p>
+      <a class="text-link" href="#contact">Tell us your idea →</a>
+      <div class="stats">
+        <div class="stat"><strong>CNC</strong><span>Design precision</span></div>
+        <div class="stat"><strong>Custom</strong><span>Made to brief</span></div>
+        <div class="stat"><strong>Detail</strong><span>Distinctive patterns</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section collections" id="collections">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Explore our design directions</span>
+      <h2>Patterns with personality.</h2>
+      <p>Find inspiration for statement entrances, decorative wall panels and finely detailed wooden surfaces.</p>
+    </div>
+
+    <div class="product-grid">
+      <article class="product-card reveal">
+        <div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85" alt="Wooden interior details and refined natural finishes"></div>
+        <div class="product-info"><span class="product-number">01 / ENTRANCE DESIGN</span><h3>CNC Wooden Doors</h3><p>Explore decorative entrance door concepts with distinctive patterns, carved detailing and a premium finish.</p><a class="text-link product-link" data-product="CNC Wooden Doors" href="#contact">Enquire about doors →</a></div>
+      </article>
+
+      <article class="product-card reveal">
+        <div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85" alt="Contemporary interior with elegant wood accents"></div>
+        <div class="product-info"><span class="product-number">02 / INTERIOR DETAILS</span><h3>Decorative Wall Panels</h3><p>Add visual depth with CNC panel concepts for feature walls, living spaces and stylish interiors.</p><a class="text-link product-link" data-product="Decorative Wall Panels" href="#contact">Discuss panel designs →</a></div>
+      </article>
+
+      <article class="product-card reveal">
+        <div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85" alt="Modern living space with warm architectural detailing"></div>
+        <div class="product-info"><span class="product-number">03 / GEOMETRIC ART</span><h3>3D CNC Patterns</h3><p>Discover dimensional geometric patterns and repeating motifs for striking decorative surfaces.</p><a class="text-link product-link" data-product="3D CNC Patterns" href="#contact">Explore geometric art →</a></div>
+      </article>
+
+      <article class="product-card reveal">
+        <div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Warm architectural details in a premium interior"></div>
+        <div class="product-info"><span class="product-number">04 / INTRICATE DETAIL</span><h3>Floral & Traditional Carving</h3><p>Classic ornamental motifs and decorative carving inspiration for traditional and contemporary spaces.</p><a class="text-link product-link" data-product="Floral and Traditional Carving" href="#contact">Discuss carved designs →</a></div>
+      </article>
+
+      <article class="product-card reveal">
+        <div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=85" alt="Contemporary space with wood and neutral finishes"></div>
+        <div class="product-info"><span class="product-number">05 / CUSTOM PANELS</span><h3>Custom Door Panels</h3><p>Share your preferred dimensions, reference image and pattern idea for a tailored project discussion.</p><a class="text-link product-link" data-product="Custom Door Panels" href="#contact">Plan your panel →</a></div>
+      </article>
+
+      <article class="product-card reveal">
+        <div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=900&q=85" alt="Natural wood and light neutral design inspiration"></div>
+        <div class="product-info"><span class="product-number">06 / YOUR VISION</span><h3>Bespoke CNC Art</h3><p>Have a unique sketch, logo, motif or creative concept? Start a conversation about your custom work.</p><a class="text-link product-link" data-product="Bespoke CNC Art" href="#contact">Share your idea →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section cnc-feature">
+  <div class="container cnc-grid">
+    <div class="cnc-image reveal">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1100&q=90" alt="Interior design inspiration for decorative woodwork">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Your idea, your design</span>
+      <h2>Have a pattern in mind? Let's bring it to life.</h2>
+      <p>From a bold geometric door to a detailed ornamental panel, your reference image helps start the conversation about a custom CNC design.</p>
+      <ul class="cnc-list">
+        <li>Share a reference photo, sketch or pattern</li>
+        <li>Specify size and intended application</li>
+        <li>Discuss pattern depth and finishing preferences</li>
+        <li>Ask about materials, feasibility and pricing</li>
+      </ul>
+      <a class="btn" href="#contact">Discuss Custom Work ↗</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Design inspiration</span>
+      <h2>Made for spaces that stand apart.</h2>
+      <p>Explore visual inspiration for warm interiors, feature panels and carefully considered wood finishes.</p>
+    </div>
+    <div class="gallery-grid">
+      <article class="gallery-card reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=90" alt="Modern interior with warm neutral colours and natural materials">
+        <div class="gallery-caption"><span>01 · Interior styling</span><h3>Warm & timeless</h3><p>Natural tones with refined detailing.</p></div>
+      </article>
+      <article class="gallery-card reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85" alt="Interior design with natural wood accents">
+        <div class="gallery-caption"><span>02 · Material inspiration</span><h3>Natural character</h3><p>Texture, grain and warmth.</p></div>
+      </article>
+      <article class="gallery-card reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1000&q=85" alt="Elegant interior with wood and neutral design elements">
+        <div class="gallery-caption"><span>03 · Modern design</span><h3>Simple sophistication</h3><p>Clean lines and balanced materials.</p></div>
+      </article>
+    </div>
+    <p style="text-align:center;font-size:.76rem;margin-top:20px">Gallery images are design inspiration. Replace them with actual Ashu Craft's CNC door and panel photos before publishing.</p>
+  </div>
+</section>
+
+<section class="section why" id="process">
+  <div class="container why-grid">
+    <div class="reveal">
+      <span class="eyebrow">From concept to craftsmanship</span>
+      <h2>Every great design starts with an idea.</h2>
+      <p>Make your requirements clear from the start. Reference photos, dimensions and pattern preferences help you discuss the right direction for your custom work.</p>
+      <a class="text-link" href="#contact">Start your enquiry →</a>
+    </div>
+    <div class="features reveal">
+      <div class="feature"><span class="feature-num">01</span><h3>Pattern variety</h3><p>Explore geometric, ornamental and contemporary design directions.</p></div>
+      <div class="feature"><span class="feature-num">02</span><h3>Custom concepts</h3><p>Discuss ideas based on your own sketch or reference image.</p></div>
+      <div class="feature"><span class="feature-num">03</span><h3>Detail-focused</h3><p>Explain your preferred dimensions, pattern and finish.</p></div>
+      <div class="feature"><span class="feature-num">04</span><h3>Direct contact</h3><p>Connect with Ashu Craft's to discuss feasibility and quotations.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">A simple process</span>
+      <h2>From your sketch to your enquiry.</h2>
+      <p>A straightforward way to begin discussing your CNC door or panel design.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card reveal"><span class="step">01</span><h3>Choose a design</h3><p>Start with a door, wall panel, geometric pattern or custom concept.</p></div>
+      <div class="process-card reveal"><span class="step">02</span><h3>Share references</h3><p>Send photos, dimensions, sketches and your intended application.</p></div>
+      <div class="process-card reveal"><span class="step">03</span><h3>Discuss details</h3><p>Talk about pattern, material, finish and production feasibility.</p></div>
+      <div class="process-card reveal"><span class="step">04</span><h3>Request a quote</h3><p>Contact Ashu Craft's to discuss pricing and the next steps.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container faq-grid">
+    <div class="reveal">
+      <span class="eyebrow">Frequently asked questions</span>
+      <h2>Before starting your CNC project.</h2>
+      <p>Have a particular design in mind? Send your requirements through the enquiry form.</p>
+      <a class="text-link" href="#contact">Ask a question →</a>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item active">
+        <button class="faq-question" aria-expanded="true"><span>What type of work can I enquire about?</span><span>+</span></button>
+        <div class="faq-answer"><p>You can enquire about CNC wooden doors, decorative panels, geometric patterns, traditional carving and custom CNC art. Confirm current capabilities directly with Ashu Craft's.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Can I submit my own design?</span><span>+</span></button>
+        <div class="faq-answer"><p>Yes, you can share a reference image or sketch through WhatsApp to discuss whether the design can be produced.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>How can I get a quotation?</span><span>+</span></button>
+        <div class="faq-answer"><p>Share the dimensions, design reference, material preference, quantity and location so the business can understand your requirements.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Are the gallery photos actual Ashu Craft's projects?</span><span>+</span></button>
+        <div class="faq-answer"><p>The current photos are visual inspiration, not verified Ashu Craft's project photos. Ask the business for its actual portfolio and product specifications.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Let's create something distinctive</span>
+      <h2>Tell us what you want to create.</h2>
+      <p>Share your design idea, required dimensions and preferred finish. Start a direct enquiry with Ashu Craft's.</p>
+      <div class="contact-detail">
+        <span class="contact-icon" aria-hidden="true">☎</span>
+        <div><strong>Call Ashu Craft's</strong><span>+91 93589 93137</span></div>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-icon" aria-hidden="true">✦</span>
+        <div><strong>Our speciality</strong><span>CNC Doors · Decorative Panels · Custom Art</span></div>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-icon" aria-hidden="true">↗</span>
+        <div><strong>Custom work</strong><span>Share your reference and dimensions</span></div>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" id="contactForm">
+      <div class="form-grid">
+        <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" placeholder="Enter your name" required></div>
+        <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+91" required></div>
+        <div class="field full"><label for="product">What are you looking for?</label>
+          <select id="product" name="product" required>
+            <option value="">Select a design</option>
+            <option>CNC Wooden Doors</option>
+            <option>Decorative Wall Panels</option>
+            <option>3D CNC Patterns</option>
+            <option>Floral and Traditional Carving</option>
+            <option>Custom Door Panels</option>
+            <option>Bespoke CNC Art</option>
+            <option>Other custom work</option>
+          </select>
+        </div>
+        <div class="field full"><label for="details">Project details</label><textarea id="details" name="details" placeholder="Dimensions, reference design, material, quantity..."></textarea></div>
+      </div>
+      <button class="btn" type="submit">Send Enquiry on WhatsApp ↗</button>
+      <p style="font-size:.72rem;margin:11px 0 0">WhatsApp opens with your enquiry details ready for you to send.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="#home"><span class="logo-symbol">AC</span><span class="logo-text">ASHU CRAFT'S<small>TURNING IDEAS INTO CNC ART</small></span></a>
+        <p>Premium door and panel design inspiration, CNC artistry and custom woodwork for distinctive spaces.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col"><strong>Explore</strong><a href="#about">About</a><a href="#collections">Collections</a><a href="#gallery">Our Work</a><a href="#process">Process</a></div>
+        <div class="footer-col"><strong>Connect</strong><a href="tel:+919358993137">+91 93589 93137</a><a href="#contact">Custom Enquiry</a><a href="#faq">FAQs</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Ashu Craft's. All rights reserved.</span><span>Turning Ideas into CNC Art</span></div>
+  </div>
+</footer>
+
+<!-- Fixed contact buttons -->
+<div class="floating-actions" aria-label="Quick contact">
+  <a class="float-btn call-btn" href="tel:+919358993137" aria-label="Call Ashu Craft's" title="Call Ashu Craft's">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M7.1 3.8 9.4 3.3c.7-.2 1.4.2 1.6.9l1 3.1c.2.6 0 1.2-.5 1.6l-1.5 1.1a14.5 14.5 0 0 0 4.1 4.1l1.1-1.5c.4-.5 1-.7 1.6-.5l3.1 1c.7.2 1.1.9.9 1.6l-.5 2.3c-.2.8-.9 1.3-1.7 1.3C10 18.3 5.7 14 5.7 5.5c0-.8.5-1.5 1.4-1.7Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+  <a class="float-btn whatsapp-btn" href="https://wa.me/919358993137?text=Hello%20Ashu%20Craft%27s%2C%20I%20would%20like%20to%20enquire%20about%20your%20CNC%20door%20and%20panel%20designs." target="_blank" rel="noopener" aria-label="Chat with Ashu Craft's on WhatsApp" title="WhatsApp Ashu Craft's">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.52 3.48A11.82 11.82 0 0 0 12.1 0C5.55 0 .22 5.32.22 11.87c0 2.09.55 4.13 1.59 5.93L.12 24l6.35-1.66a11.9 11.9 0 0 0 5.62 1.43h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.23-6.15-3.46-8.41ZM12.1 21.75h-.01a9.86 9.86 0 0 1-5.02-1.37l-.36-.21-3.77.99 1.01-3.67-.23-.38a9.84 9.84 0 0 1-1.51-5.24c0-5.45 4.44-9.89 9.9-9.89a9.8 9.8 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 7c0 5.45-4.44 9.88-9.89 9.88Zm5.43-7.4c-.3-.15-1.77-.87-2.05-.97-.28-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.8-1.49-1.79-1.66-2.09-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.66-.51l-.57-.01c-.2 0-.52.07-.8.37-.28.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.5 1.7.64.72.23 1.37.2 1.88.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+    </svg>
+  </a>
+</div>
+
+<script>
+// Mobile navigation
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  menuToggle.textContent = isOpen ? 'Close −' : 'Menu +';
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.textContent = 'Menu +';
+  });
+});
+
+// Accessible FAQ accordion
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.closest('.faq-item');
+    const wasOpen = item.classList.contains('active');
+
+    document.querySelectorAll('.faq-item').forEach(other => {
+      other.classList.remove('active');
+      other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!wasOpen) {
+      item.classList.add('active');
+      button.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Reveal sections as they enter the viewport
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.12});
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+}
+
+// Prefill the enquiry product when a collection link is clicked
+document.querySelectorAll('.product-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const select = document.getElementById('product');
+    const value = link.dataset.product;
+    const option = Array.from(select.options).find(item => item.value === value || item.text === value);
+    if (option) select.value = option.value;
+  });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Open WhatsApp with the customer's enquiry
+document.getElementById('contactForm').addEventListener('submit', event => {
+  event.preventDefault();
+
+  const form = new FormData(event.currentTarget);
+  const message = [
+    "Hello Ashu Craft's!",
+    `Name: ${form.get('name') || ''}`,
+    `Phone: ${form.get('phone') || ''}`,
+    `Interested in: ${form.get('product') || ''}`,
+    `Project details: ${form.get('details') || ''}`
+  ].join('\n');
+
+  const whatsappURL = 'https://wa.me/919358993137?text=' + encodeURIComponent(message);
+  window.open(whatsappURL, '_blank', 'noopener');
+});
+</script>
+</body>
+</html>
